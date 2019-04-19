@@ -616,8 +616,225 @@ void transposeofmatrix()
         }
 
     return 0;
+void length_of_string()
+{
+    string str = "C++ Programming";
+
+    // you can also use str.length()
+    cout << "String Length = " << str.size();
+
+    return 0;
+}
+void concatenate_stringobjects()
+
+{
+    string s1, s2, result;
+
+    cout << "Enter string s1: ";
+    getline (cin, s1);
+
+    cout << "Enter string s2: ";
+    getline (cin, s2);
+
+    result = s1 + s2;
+
+    cout << "Resultant String = "<< result;
+
+    return 0;
+}
+void structure()
+struct student
+{
+    char name[50];
+    int roll;
+    float marks;
+} s[10];
+
+int main()
+{
+    cout << "Enter information of students: " << endl;
+
+    // storing information
+    for(int i = 0; i < 10; ++i)
+    {
+        s[i].roll = i+1;
+        cout << "For roll number" << s[i].roll << "," << endl;
+
+        cout << "Enter name: ";
+        cin >> s[i].name;
+
+        cout << "Enter marks: ";
+        cin >> s[i].marks;
+
+        cout << endl;
+    }
+
+    cout << "Displaying Information: " << endl;
+
+    // Displaying information
+    for(int i = 0; i < 10; ++i)
+    {
+        cout << "\nRoll number: " << i+1 << endl;
+        cout << "Name: " << s[i].name << endl;
+        cout << "Marks: " << s[i].marks << endl;
+    }
+
+    return 0;
+}
+void time_diffrence()
+struct TIME
+{
+  int seconds;
+  int minutes;
+  int hours;
+};
+
+void computeTimeDifference(struct TIME, struct TIME, struct TIME *);
+
+int main()
+{
+    struct TIME t1, t2, difference;
+
+    cout << "Enter start time." << endl;
+    cout << "Enter hours, minutes and seconds respectively: ";
+    cin >> t1.hours >> t1.minutes >> t1.seconds;
+
+    cout << "Enter stop time." << endl;
+    cout << "Enter hours, minutes and seconds respectively: ";
+    cin >> t2.hours >> t2.minutes >> t2.seconds;
+
+    computeTimeDifference(t1, t2, &difference);
+
+    cout << endl << "TIME DIFFERENCE: " << t1.hours <<onds;
+    cout << " - " << t2.hours << ":" << t2.minutes << ":" << t2.seconds;
+    cout << " = " << difference.hours << ":" << difference.minutes << ":" << difference.seconds;
+    return 0;
+}
+void computeTimeDifference(struct TIME t1, struct TIME t2, struct TIME *difference){
+
+    if(t2.seconds > t1.seconds)
+    {
+        --t1.minutes;
+        t1.seconds += 60;
+    }
+
+    difference->seconds = t1.seconds - t2.seconds;
+    if(t2.minutes > t1.minutes)
+    {
+        --t1.hours;
+        t1.minutes += 60;
+    }
+    difference->minutes = t1.minutes-t2.minutes;
+    difference->hours = t1.hours-t2.hours;
+}
+void dictionary_order()
+{
+    string str[10], temp;
+
+    cout << "Enter 10 words: " << endl;
+    for(int i = 0; i < 10; ++i)
+    {
+      getline(cin, str[i]);
+    }
+
+    for(int i = 0; i < 9; ++i)
+       for( int j = i+1; j < 10; ++j)
+       {
+          if(str[i] > str[j])
+          {
+            temp = str[i];
+            str[i] = str[j];
+            str[j] = temp;
+          }
+    }
+
+    cout << "In lexicographical order: " << endl;
+
+    for(int i = 0; i < 10; ++i)
+    {
+       cout << str[i] << endl;
+    }
+    return 0;
+}
+void remove_char()
+ {
+    string line;
+    cout << "Enter a string: ";
+    getline(cin, line);
+
+    for(int i = 0; i < line.size(); ++i)
+    {
+        if (!((line[i] >= 'a' && line[i]<='z') || (line[i] >= 'A' && line[i]<='Z')))
+        {
+            line[i] = '\0';
+        }
+    }
+    cout << "Output String: " << line;
+    return 0;
+}
+void add_matrix()
+{
+    int r, c, a[100][100], b[100][100], sum[100][100], i, j;
+
+    cout << "Enter number of rows (between 1 and 100): ";
+    cin >> r;
+
+    cout << "Enter number of columns (between 1 and 100): ";
+    cin >> c;
+
+    cout << endl << "Enter elements of 1st matrix: " << endl;
+
+    // Storing elements of first matrix entered by user.
+    for(i = 0; i < r; ++i)
+       for(j = 0; j < c; ++j)
+       {
+           cout << "Enter element a" << i + 1 << j + 1 << " : ";
+           cin >> a[i][j];
+       }
+
+    // Storing elements of second matrix entered by user.
+    cout << endl << "Enter elements of 2nd matrix: " << endl;
+    for(i = 0; i < r; ++i)
+       for(j = 0; j < c; ++j)
+       {
+           cout << "Enter element b" << i + 1 << j + 1 << " : ";
+           cin >> b[i][j];
+       }
+
+    // Adding Two matrices
+    for(i = 0; i < r; ++i)
+        for(j = 0; j < c; ++j)
+            sum[i][j] = a[i][j] + b[i][j];
+
+    // Displaying the resultant sum matrix.
+    cout << endl << "Sum of two matrix is: " << endl;
+    for(i = 0; i < r; ++i)
+        for(j = 0; j < c; ++j)
+        {
+            cout << sum[i][j] << "  ";
+            if(j == c - 1)
+                cout << endl;
+        }
+
+    return 0;
+}
+void access_array_elements()
+{
+   int data[5];
+   cout << "Enter elements: ";
+
+   for(int i = 0; i < 5; ++i)
+      cin >> data[i];
+
+   cout << "You entered: ";
+   for(int i = 0; i < 5; ++i)
+      cout << endl << *(data + i);
+
+   return 0;
 }
 
+
 };
+
 
 
