@@ -832,8 +832,87 @@ void access_array_elements()
 
    return 0;
 }
-
-
+class Employee:public project
+ {
+   public:
+       int id;//data member (also instance variable)    
+       string name;//data member(also instance variable)
+       float salary;
+       Employee(int i, string n, float s)  
+        {  
+            id = i;  
+            name = n;  
+            salary = s;
+        }  
+       void display()  
+        {  
+            cout<<id<<"  "<<name<<"  "<<salary<<endl;  
+        }  
+};
+class A:public project  
+ {  
+   public:  
+        A()    
+        {    
+            cout<<"Constructor Invoked"<<endl;    
+        }    
+        ~A()    
+        {    
+            cout<<"Destructor Invoked"<<endl;    
+        }  
+};
+class Animal:public project
+ {  
+   public:  
+ void eat() {   
+    cout<<"Eating..."<<endl;   
+ }    
+   };  
+   class Dog: public Animal   
+   {    
+       public:  
+     void bark(){  
+    cout<<"Barking..."<<endl;   
+     }    
+   };   
+   class BabyDog: public Dog   
+   {    
+       public:  
+     void weep() {  
+    cout<<"Weeping...";   
+     }    
+   };  
+   class A :public project 
+{  
+    protected:  
+     int a;  
+    public:  
+    void get_a(int n)  
+    {  
+        a = n;  
+    }  
+};  
+  
+class B  
+{  
+    protected:  
+    int b;  
+    public:  
+    void get_b(int n)  
+    {  
+        b = n;  
+    }  
+};  
+class C : public A,public B  
+{  
+   public:  
+    void display()  
+    {  
+        std::cout << "The value of a is : " <<a<< std::endl;  
+        std::cout << "The value of b is : " <<b<< std::endl;  
+        cout<<"Addition of a and b is : "<<a+b;  
+    }  
+};     
 };
 
 
