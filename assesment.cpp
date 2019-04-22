@@ -933,6 +933,102 @@ class C : public A,public B
 };     
 
 };
+    
+//program for tree traversal
 
+struct Node 
+{ 
+    int data; 
+    struct Node* left, *right; 
+    Node(int data) 
+    { 
+        this->data = data; 
+        left = right = NULL; 
+    } 
+}; 
+ 
+void printPostorder(struct Node* node) 
+{ 
+    if (node == NULL) 
+        return; 
+  
+    printPostorder(node->left); 
+  
+    printPostorder(node->right); 
+  
+    cout << node->data << " "; 
+} 
+  
+void printInorder(struct Node* node) 
+{ 
+    if (node == NULL) 
+        return; 
+      printInorder(node->left); 
+    cout << node->data << " "; 
+  
+    printInorder(node->right); 
+} 
+  
+void printPreorder(struct Node* node) 
+{ 
+    if (node == NULL) 
+        return; 
+  
+    cout << node->data << " "; 
+  
+    printPreorder(node->left);  
+  
+    printPreorder(node->right); 
+}
+
+//inorder tree traversal
+
+
+struct tNode {
+    int data;
+    struct tNode* left;
+    struct tNode* right;
+};
+
+void MorrisTraversal(struct tNode* root)
+{
+    struct tNode *current, *pre;
+
+    if (root == NULL)
+        return;
+
+    current = root;
+    while (current != NULL) {
+
+        if (current->left == NULL) {
+            printf("%d ", current->data);
+            current = current->right;
+        }
+        else {
+		 pre = current->left;
+            while (pre->right != NULL && pre->right != current)
+                pre = pre->right;
+
+	    if (pre->right == NULL) {
+                pre->right = current;
+                current = current->left;
+            }else {
+                pre->right = NULL;
+                printf("%d ", current->data);
+                current = current->right;
+         } 
+	} 
+    }
+}
+
+struct tNode* newtNode(int data)
+{
+    struct tNode* node = new tNode;
+    node->data = data;
+    node->left = NULL;
+    node->right = NULL;
+
+    return (node);
+}
 
 
