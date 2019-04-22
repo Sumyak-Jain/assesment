@@ -37,6 +37,8 @@ public:
       cout << "Number is Prime."<<endl;
   return 0;
     }
+	
+    }
     void Palindrome()
     {
          int n,r,sum=0,temp;
@@ -428,10 +430,13 @@ void multiplication_table()
 }
 void Lcm()
 {
-    int n1, n2, max;
+    int n1;
+	int n2;
+	int max;
 
     cout << "Enter two numbers: ";
-    cin >> n1 >> n2;
+    cin >> n1;
+	cin>>n2;
 
     // maximum value between n1 and n2 is stored in max
     max = (n1 > n2) ? n1 : n2;
@@ -454,7 +459,8 @@ void hcf()
     int n1, n2;
 
     cout << "Enter two numbers: ";
-    cin >> n1 >> n2;
+    cin >> n1;
+	cin>>n2;
 
     while(n1 != n2)
     {
