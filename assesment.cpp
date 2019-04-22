@@ -932,7 +932,6 @@ class C : public A,public B
     }  
 };     
 
-};
     
 //program for tree traversal
 
@@ -1031,4 +1030,20 @@ struct tNode* newtNode(int data)
     return (node);
 }
 
-
+};
+int main()
+{
+	project obj;
+	obj.Fibonacci_Series();
+	obj.prime_number();
+	obj.factorial();
+	obj.sum_of_digits();
+	obj.swapp_numbers();
+	obj.matrix_multiplication();
+	obj.calculator();
+	obj.leap_year();
+	obj.sumof_naturalnum();
+	obj.multiplication_table();
+	obj.Lcm();
+	return 0;
+}
