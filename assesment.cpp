@@ -37,6 +37,8 @@ public:
       cout << "Number is Prime."<<endl;
   return 0;
     }
+	
+    }
     void Palindrome()
     {
          int n,r,sum=0,temp;
@@ -428,10 +430,13 @@ void multiplication_table()
 }
 void Lcm()
 {
-    int n1, n2, max;
+    int n1;
+	int n2;
+	int max;
 
     cout << "Enter two numbers: ";
-    cin >> n1 >> n2;
+    cin >> n1;
+	cin>>n2;
 
     // maximum value between n1 and n2 is stored in max
     max = (n1 > n2) ? n1 : n2;
@@ -454,7 +459,8 @@ void hcf()
     int n1, n2;
 
     cout << "Enter two numbers: ";
-    cin >> n1 >> n2;
+    cin >> n1;
+	cin>>n2;
 
     while(n1 != n2)
     {
@@ -791,6 +797,19 @@ void add_matrix()
            cout << "Enter element a" << i + 1 << j + 1 << " : ";
            cin >> a[i][j];
        }
+	void diffrence()
+	{ 
+    int val1, val2; 
+  
+    /// finding absolute value using 
+    /// abs() function. 
+    val1 = abs(22); 
+    val2 = abs(-43); 
+  
+    cout << "abs(22) = " << val1 << "\n"; 
+    cout << "abs(-43) = " << val2 << "\n"; 
+    return 0; 
+} 
 
     // Storing elements of second matrix entered by user.
     cout << endl << "Enter elements of 2nd matrix: " << endl;
